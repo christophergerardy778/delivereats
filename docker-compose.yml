@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  auth-db:
+    container_name: auth-db
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: auth_db
+      POSTGRES_USER: chris778
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5432:5030"
+    volumes:
+      - db_auth
+
+volumes:
+  db_auth:
