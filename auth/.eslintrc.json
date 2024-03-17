@@ -12,10 +12,7 @@
 			"files": [
 				"*.ts",
 				"*.tsx"
-			],
-			"env": {
-				"jest": true
-			}
+			]
 		}
 	],
 	"parserOptions": {
@@ -24,5 +21,8 @@
 	},
 	"rules": {
 		"new-cap": "off"
-	}
+	},
+	"ignorePatterns": [
+		"test/**/*.ts"
+	]
 }
