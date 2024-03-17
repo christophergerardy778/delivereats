@@ -6,7 +6,7 @@ export abstract class ValueObject<T extends Primitives> {
 	// eslint-disable-next-line @typescript-eslint/parameter-properties
 	readonly value!: T;
 
-	protected constructor(value: T) {
+	constructor(value: T) {
 		this.value = value;
 		this.ensureIsDefined(value);
 	}

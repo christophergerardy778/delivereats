@@ -5,9 +5,32 @@ import {type ClientEmail} from './value-object/ClientEmail';
 import {type ClientPassword} from './value-object/ClientPassword';
 import {type ClientBirthday} from './value-object/ClientBirthday';
 import {Column, Entity, PrimaryColumn} from 'typeorm';
+import {type ClientImg} from './value-object/ClientImg';
 
 @Entity()
 export class Client {
+	public static create(params: {
+		id: ClientId;
+		name: ClientName;
+		lastname: ClientLastname;
+		email: ClientEmail;
+		password: ClientPassword;
+		birthday: ClientBirthday;
+		img: ClientImg;
+	}): Client {
+		const client = new Client();
+
+		client.id = params.id;
+		client.name = params.name;
+		client.lastname = params.lastname;
+		client.email = params.email;
+		client.password = params.password;
+		client.birthday = params.birthday;
+		client.img = params.img;
+
+		return client;
+	}
+
 	@PrimaryColumn({
 		type: 'varchar',
 		length: 20,
