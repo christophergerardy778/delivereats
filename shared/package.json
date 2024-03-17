@@ -1,0 +1,29 @@
+{
+  "name": "shared-layer",
+  "version": "1.0.8",
+  "description": "Shared layer for microservices in nodejs",
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "license": "ISC",
+  "scripts": {
+    "build": "tsc",
+    "release": "npm run build && npm version patch && npm publish"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "uuid": "^9.0.1",
+    "uuid-validate": "^0.0.3"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.8",
+    "@types/uuid-validate": "^0.0.3",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "eslint": "^8.57.0",
+    "eslint-config-xo": "^0.44.0",
+    "eslint-config-xo-typescript": "^4.0.0",
+    "typescript": "^5.4.2"
+  }
+}

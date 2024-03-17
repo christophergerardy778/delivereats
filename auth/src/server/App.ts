@@ -1,7 +1,8 @@
 import 'reflect-metadata';
+import './configureEnv';
+
 import express from 'express';
-import dotenv from 'dotenv';
-import {appDataSource} from '../datasource';
+import {appDataSource} from './datasource';
 
 class App {
 	private readonly expressApp = express();
@@ -20,13 +21,8 @@ class App {
 	}
 
 	private async setupServer() {
-		this.setupEnv();
 		this.setupRoutes();
 		await this.setupDatabase();
-	}
-
-	private setupEnv() {
-		dotenv.config();
 	}
 
 	private setupRoutes() {

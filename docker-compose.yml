@@ -9,9 +9,9 @@ services:
       POSTGRES_USER: chris778
       POSTGRES_PASSWORD: 123456
     ports:
-      - "5432:5030"
+      - "5430:5432"
     volumes:
-      - db_auth
+      - db_auth:/var/lib/postgresql/data
 
 volumes:
   db_auth:

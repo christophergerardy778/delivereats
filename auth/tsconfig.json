@@ -3,7 +3,7 @@
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
 		"lib": ["es6"],
-		"types": ["reflect-metadata"],
+		"types": ["reflect-metadata", "jest"],
 		"target": "ESNext",
 		"module": "commonjs",
 		"esModuleInterop": true,

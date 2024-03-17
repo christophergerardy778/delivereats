@@ -1,5 +1,5 @@
 import {DataSource} from 'typeorm';
-import {User} from './user/domain/User';
+import {Client} from '../core/client/domain/Client';
 
 export const appDataSource = new DataSource({
 	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -8,8 +8,8 @@ export const appDataSource = new DataSource({
 	port: process.env.DATABASE_PORT! as unknown as number,
 	username: process.env.DATABASE_USER!,
 	password: process.env.DATABASE_PASSWORD,
-	database: process.env.auth_db!,
+	database: process.env.DATABASE_NAME!,
 	synchronize: true,
 	logging: true,
-	entities: [User],
+	entities: [Client],
 });
