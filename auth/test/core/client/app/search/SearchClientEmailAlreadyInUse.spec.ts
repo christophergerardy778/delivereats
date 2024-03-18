@@ -1,7 +1,7 @@
-import {SearchClientByEmail} from "../../../../src/core/client/app/search/SearchClientByEmail";
-import {allClientsMock} from "../mock/AllClientsMock";
-import {SearchClientEmailAlreadyInUse} from "../../../../src/core/client/app/search/SearchClientEmailAlreadyInUse";
-import {ClientMother} from "../domain/ClientMother";
+import {SearchClientByEmail} from "../../../../../src/core/client/app/search/SearchClientByEmail";
+import {allClientsMock} from "../../mock/AllClientsMock";
+import {SearchClientEmailAlreadyInUse} from "../../../../../src/core/client/app/search/SearchClientEmailAlreadyInUse";
+import {ClientMother} from "../../domain/ClientMother";
 import {mockReset} from "jest-mock-extended";
 
 const client = ClientMother.random();

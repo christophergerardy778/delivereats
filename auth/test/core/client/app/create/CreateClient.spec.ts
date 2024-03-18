@@ -1,10 +1,10 @@
-import {allClientsMock} from "../mock/AllClientsMock";
-import {CreateClient} from "../../../../src/core/client/app/create/CreateClient";
-import {ClientMother} from "../domain/ClientMother";
-import {SearchClientEmailAlreadyInUse} from "../../../../src/core/client/app/search/SearchClientEmailAlreadyInUse";
-import {SearchClientByEmail} from "../../../../src/core/client/app/search/SearchClientByEmail";
+import {allClientsMock} from "../../mock/AllClientsMock";
+import {CreateClient} from "../../../../../src/core/client/app/create/CreateClient";
+import {ClientMother} from "../../domain/ClientMother";
+import {SearchClientEmailAlreadyInUse} from "../../../../../src/core/client/app/search/SearchClientEmailAlreadyInUse";
+import {SearchClientByEmail} from "../../../../../src/core/client/app/search/SearchClientByEmail";
 import {mockReset} from "jest-mock-extended";
-import {ClientEmailAlreadyInUse} from "../../../../src/core/client/domain/error/ClientEmailAlreadyInUse";
+import {ClientEmailAlreadyInUse} from "../../../../../src/core/client/domain/error/ClientEmailAlreadyInUse";
 
 const client = ClientMother.random();
 const searchClientByEmail = new SearchClientByEmail(allClientsMock);

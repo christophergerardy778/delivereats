@@ -6,7 +6,7 @@
     "dev": "nodemon --exec ts-node src/server/App.ts",
     "build": "tsc",
     "start": "node dist/server/App.js",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch --maxWorkers=25%"
   },
   "author": "Christopher Gerardy",
   "license": "ISC",

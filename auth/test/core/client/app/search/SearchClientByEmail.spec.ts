@@ -1,8 +1,8 @@
-import {SearchClientByEmail} from "../../../../src/core/client/app/search/SearchClientByEmail";
-import {allClientsMock} from "../mock/AllClientsMock";
-import {ClientMother} from "../domain/ClientMother";
+import {SearchClientByEmail} from "../../../../../src/core/client/app/search/SearchClientByEmail";
+import {allClientsMock} from "../../mock/AllClientsMock";
+import {ClientMother} from "../../domain/ClientMother";
 import {mockReset} from "jest-mock-extended";
-import {ClientNotFoundError} from "../../../../src/core/client/domain/error/ClientNotFoundError";
+import {ClientNotFoundError} from "../../../../../src/core/client/domain/error/ClientNotFoundError";
 
 const client = ClientMother.random();
 const searchClientByEmail = new SearchClientByEmail(allClientsMock);

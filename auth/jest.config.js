@@ -4,4 +4,10 @@ module.exports = {
 	testMatch: [
 		'**/*.spec.ts',
 	],
+	transform: {
+		'^.+\\.tsx?$': [
+			'ts-jest',
+			{isolatedModules: true},
+		],
+	},
 };
