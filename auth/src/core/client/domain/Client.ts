@@ -2,10 +2,11 @@ import {type ClientId} from './value-object/ClientId';
 import {type ClientName} from './value-object/ClientName';
 import {type ClientLastname} from './value-object/ClientLastname';
 import {type ClientEmail} from './value-object/ClientEmail';
-import {type ClientPassword} from './value-object/ClientPassword';
+import {ClientPassword} from './value-object/ClientPassword';
 import {type ClientBirthday} from './value-object/ClientBirthday';
 import {Column, Entity, PrimaryColumn} from 'typeorm';
 import {type ClientImg} from './value-object/ClientImg';
+import {PasswordEncryptor} from './PasswordEncryptor';
 
 @Entity()
 export class Client {
@@ -72,4 +73,11 @@ export class Client {
 		length: 20,
 	})
 	public img!: ClientBirthday;
+
+	private readonly passwordEncryptor = new PasswordEncryptor();
+
+	public async encryptPassword(): Promise<void> {
+		const passwordEncrypted = await this.passwordEncryptor.encrypt(this.password.value);
+		this.password = ClientPassword.create(passwordEncrypted);
+	}
 }
