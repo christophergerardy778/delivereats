@@ -1,5 +1,6 @@
 import {DataSource} from 'typeorm';
 import {Client} from '../core/client/domain/Client';
+import {clientEntity} from '../core/client/infrastructure/ClientEntity';
 
 export const appDataSource = new DataSource({
 	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -11,5 +12,5 @@ export const appDataSource = new DataSource({
 	database: process.env.DATABASE_NAME!,
 	synchronize: true,
 	logging: true,
-	entities: [Client],
+	entities: [clientEntity],
 });

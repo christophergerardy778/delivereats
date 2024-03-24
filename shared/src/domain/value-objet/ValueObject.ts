@@ -2,7 +2,7 @@ import {InvalidParamError} from '../error/InvalidParamError';
 
 export type Primitives = string | number | boolean | Date;
 
-export abstract class ValueObject<T extends Primitives> {
+export class ValueObject<T extends Primitives> {
 	// eslint-disable-next-line @typescript-eslint/parameter-properties
 	readonly value!: T;
 
