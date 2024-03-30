@@ -1,5 +1,5 @@
-import {type CommandHandler} from 'shared-layer';
-import {type CreateClientCommand} from './create/CreateClientCommand';
+import {type Command, type CommandHandler} from 'shared-layer';
+import {CreateClientCommand} from './create/CreateClientCommand';
 import {type CreateClient} from './create/CreateClient';
 import {Client} from '../domain/Client';
 import {ClientId} from '../domain/value-object/ClientId';
@@ -9,9 +9,16 @@ import {ClientEmail} from '../domain/value-object/ClientEmail';
 import {ClientPassword} from '../domain/value-object/ClientPassword';
 import {ClientBirthday} from '../domain/value-object/ClientBirthday';
 import {ClientImg} from '../domain/value-object/ClientImg';
+import {injectable} from 'inversify';
 
+@injectable()
 export class RegisterClientCommandHandler implements CommandHandler<CreateClientCommand> {
-	constructor(private readonly createClient: CreateClient) {}
+	constructor(private readonly createClient: CreateClient) {
+	}
+
+	subscribeTo(): Command {
+		return CreateClientCommand;
+	}
 
 	async handle(command: CreateClientCommand): Promise<void> {
 		const client = Client.create({

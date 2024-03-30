@@ -20,7 +20,9 @@
 		"sourceType": "module"
 	},
 	"rules": {
-		"new-cap": "off"
+		"new-cap": "off",
+		"@typescript-eslint/no-unsafe-assignment": "warn",
+		"@typescript-eslint/no-unsafe-call": "warn"
 	},
 	"ignorePatterns": [
 		"test/**/*.ts"

@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "amqplib": "^0.10.3",
+    "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",
     "dayjs": "^1.11.10",
     "dotenv": "^16.4.5",
@@ -44,7 +45,7 @@
     "inversify": "^6.0.2",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.3",
-    "shared-layer": "^1.0.17",
+    "shared-layer": "^1.0.27",
     "typeorm": "^0.3.20"
   }
 }

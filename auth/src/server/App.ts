@@ -3,6 +3,7 @@ import './configureEnv';
 
 import express from 'express';
 import {appDataSource} from './datasource';
+import {router} from './router/router';
 
 class App {
 	private readonly expressApp = express();
@@ -26,7 +27,7 @@ class App {
 	}
 
 	private setupRoutes() {
-		console.log('routes');
+		this.expressApp.use('/api', router);
 	}
 
 	private async setupDatabase() {

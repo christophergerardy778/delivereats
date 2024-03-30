@@ -3,7 +3,7 @@
     "declaration": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "lib": ["es6"],
+    "lib": ["ES2022"],
     "target": "ESNext",
     "module": "commonjs",
     "esModuleInterop": true,

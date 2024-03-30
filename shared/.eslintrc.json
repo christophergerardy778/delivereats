@@ -1,24 +1,30 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": "xo",
-    "overrides": [
-        {
-            "extends": [
-                "xo-typescript"
-            ],
-            "files": [
-                "*.ts",
-                "*.tsx"
-            ]
-        }
-    ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "rules": {
-    }
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": "xo",
+	"overrides": [
+		{
+			"extends": [
+				"xo-typescript"
+			],
+			"files": [
+				"*.ts",
+				"*.tsx"
+			]
+		}
+	],
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"rules": {
+		"new-cap": "off",
+		"@typescript-eslint/no-unsafe-assignment": "warn",
+		"@typescript-eslint/no-unsafe-call": "warn"
+	},
+	"ignorePatterns": [
+		"test/**/*.ts"
+	]
 }
