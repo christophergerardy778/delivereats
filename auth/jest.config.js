@@ -10,5 +10,5 @@ module.exports = {
 			{isolatedModules: true},
 		],
 	},
-	setupFiles: ['dotenv/config'],
+	setupFiles: ["<rootDir>/jest.setup.ts"],
 };

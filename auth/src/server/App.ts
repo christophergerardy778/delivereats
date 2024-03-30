@@ -2,8 +2,10 @@ import 'reflect-metadata';
 import './configureEnv';
 
 import express from 'express';
-import {appDataSource} from './datasource';
 import {router} from './router/router';
+import {container} from '../container';
+import {type Connection} from '../core/client/infrastructure/persistence/Connection';
+import {types} from '../core/client/infrastructure/Types';
 
 class App {
 	private readonly expressApp = express();
@@ -31,7 +33,8 @@ class App {
 	}
 
 	private async setupDatabase() {
-		await appDataSource.initialize();
+		const connection = container.get<Connection>(types.connection);
+		await connection.connect();
 	}
 }
 
