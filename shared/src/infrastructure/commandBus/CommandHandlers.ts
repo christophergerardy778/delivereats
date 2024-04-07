@@ -1,6 +1,6 @@
-import {type Command} from './Command';
-import {type CommandHandler} from './CommandHandler';
-import {UnhandledCommandError} from '../error/UnhandledCommandError';
+import {type Command} from '../../domain/bus/Command';
+import {type CommandHandler} from '../../domain/bus/CommandHandler';
+import {UnhandledCommandError} from '../../domain/error/UnhandledCommandError';
 
 export class CommandHandlers extends Map<Command, CommandHandler<Command>> {
 	constructor(commandHandlers: Array<CommandHandler<Command>>) {

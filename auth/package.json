@@ -47,7 +47,7 @@
     "jsonwebtoken": "^9.0.2",
     "node-fetch": "^3.3.2",
     "pg": "^8.11.3",
-    "shared-layer": "^1.0.28",
+    "shared-layer": "^1.0.29",
     "typeorm": "^0.3.20",
     "uuid": "^9.0.1"
   }

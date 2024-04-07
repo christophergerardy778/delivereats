@@ -1,5 +1,6 @@
 import {type Query} from './Query';
+import {type Response} from './Response';
 
 export type QueryBus = {
-	ask<T>(query: Query): Promise<T>;
+	ask<T extends Response>(query: Query): Promise<T>;
 };
