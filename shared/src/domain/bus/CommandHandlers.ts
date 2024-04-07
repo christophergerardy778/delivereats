@@ -12,7 +12,7 @@ export class CommandHandlers extends Map<Command, CommandHandler<Command>> {
 	}
 
 	public get(command: Command): CommandHandler<Command> {
-		const commandHandler = super.get(command);
+		const commandHandler = super.get(command.constructor);
 
 		if (!commandHandler) {
 			throw new UnhandledCommandError();

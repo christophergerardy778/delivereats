@@ -36,16 +36,19 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
+    "@types/uuid": "^9.0.8",
     "amqplib": "^0.10.3",
-    "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",
     "dayjs": "^1.11.10",
     "dotenv": "^16.4.5",
     "express": "^4.18.3",
     "inversify": "^6.0.2",
+    "joi": "^17.12.3",
     "jsonwebtoken": "^9.0.2",
+    "node-fetch": "^3.3.2",
     "pg": "^8.11.3",
-    "shared-layer": "^1.0.27",
-    "typeorm": "^0.3.20"
+    "shared-layer": "^1.0.28",
+    "typeorm": "^0.3.20",
+    "uuid": "^9.0.1"
   }
 }

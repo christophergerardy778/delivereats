@@ -9,11 +9,12 @@ import {ClientEmail} from '../domain/value-object/ClientEmail';
 import {ClientPassword} from '../domain/value-object/ClientPassword';
 import {ClientBirthday} from '../domain/value-object/ClientBirthday';
 import {ClientImg} from '../domain/value-object/ClientImg';
-import {injectable} from 'inversify';
+import {inject, injectable} from 'inversify';
+import {clientTypes} from '../infrastructure/ClientTypes';
 
 @injectable()
 export class RegisterClientCommandHandler implements CommandHandler<CreateClientCommand> {
-	constructor(private readonly createClient: CreateClient) {
+	constructor(@inject(clientTypes.createClient) private readonly createClient: CreateClient) {
 	}
 
 	subscribeTo(): Command {
