@@ -1,7 +1,7 @@
 import {type NextFunction, type Request, type Response} from 'express';
 import {container} from '../../container';
 import {type Jwt} from '../../core/client/domain/Jwt';
-import {types} from '../../core/client/infrastructure/Types';
+import {clientTypes} from '../../core/client/infrastructure/ClientTypes';
 
 export function isValidJwt(req: Request, res: Response, next: NextFunction) {
 	const authorizationHeader = req.headers.authorization;
@@ -13,7 +13,7 @@ export function isValidJwt(req: Request, res: Response, next: NextFunction) {
 			});
 	}
 
-	const jwt = container.get<Jwt>(types.jwt);
+	const jwt = container.get<Jwt>(clientTypes.jwt);
 
 	const isValidJwt = jwt.isValid(authorizationHeader);
 

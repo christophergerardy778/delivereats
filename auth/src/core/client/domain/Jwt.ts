@@ -1,6 +1,8 @@
 import jsonWebToken, {type JwtPayload} from 'jsonwebtoken';
 import {InvalidJsonWebTokenError} from './error/InvalidJsonWebTokenError';
+import {injectable} from 'inversify';
 
+@injectable()
 export class Jwt {
 	public sign<T extends Record<string, unknown>>(payload: T): string {
 		return jsonWebToken.sign(payload, process.env.JSON_WEB_TOKEN_KEY!);

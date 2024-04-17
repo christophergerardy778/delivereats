@@ -1,6 +1,8 @@
 import {compare, genSalt, hash} from 'bcryptjs';
 import {type EncryptPassword} from 'shared-layer';
+import {injectable} from 'inversify';
 
+@injectable()
 export class PasswordEncryptor implements EncryptPassword {
 	private get rounds() {
 		return 10;
