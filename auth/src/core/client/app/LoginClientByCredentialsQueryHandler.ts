@@ -1,14 +1,15 @@
 import {type Query, type QueryHandler} from 'shared-layer';
 import {LoginClientByCredentialsQuery} from './login/LoginClientByCredentialsQuery';
 import {type LoginClientByCredentialsResponse} from './login/LoginClientByCredentialsResponse';
-import {injectable} from 'inversify';
+import {inject, injectable} from 'inversify';
 import {LoginClientByCredentials} from './login/LoginClientByCredentials';
 import {ClientEmail} from '../domain/value-object/ClientEmail';
 import {ClientPassword} from '../domain/value-object/ClientPassword';
+import {clientTypes} from '../infrastructure/ClientTypes';
 
 @injectable()
-export class LoginClientQueryHandler implements QueryHandler<LoginClientByCredentialsQuery, LoginClientByCredentialsResponse> {
-	constructor(private readonly loginByCredentials: LoginClientByCredentials) {
+export class LoginClientByCredentialsQueryHandler implements QueryHandler<LoginClientByCredentialsQuery, LoginClientByCredentialsResponse> {
+	constructor(@inject(clientTypes.loginClientByCredentials) private readonly loginByCredentials: LoginClientByCredentials) {
 	}
 
 	subscribeTo(): Query {

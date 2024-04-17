@@ -12,7 +12,7 @@ import {SearchClientEmailAlreadyInUse} from './core/client/app/search/SearchClie
 import {LoginClientByCredentials} from './core/client/app/login/LoginClientByCredentials';
 import {PasswordEncryptor} from './core/client/domain/PasswordEncryptor';
 import {type EncryptPassword} from 'shared-layer';
-import {LoginClientQueryHandler} from './core/client/app/LoginClientQueryHandler';
+import {LoginClientByCredentialsQueryHandler} from './core/client/app/LoginClientByCredentialsQueryHandler';
 
 const container = new Container();
 
@@ -28,7 +28,7 @@ container.bind<SearchClientEmailAlreadyInUse>(clientTypes.searchClientEmailAlrea
 container.bind<LoginClientByCredentials>(clientTypes.loginClientByCredentials).to(LoginClientByCredentials);
 
 container.bind<RegisterClientCommandHandler>(clientTypes.registerClientCommandHandler).to(RegisterClientCommandHandler);
-container.bind<LoginClientQueryHandler>(clientTypes.loginClientQueryHandler).to(LoginClientQueryHandler);
+container.bind<LoginClientByCredentialsQueryHandler>(clientTypes.loginClientQueryHandler).to(LoginClientByCredentialsQueryHandler);
 
 export {
 	container,
