@@ -7,11 +7,14 @@ import {registerClientSchema} from '../controller/registerClient/registerClientS
 import {loginClientSchema} from '../controller/loginClient/loginClientSchema';
 
 import {validateBody} from '../middleware/validateBody';
+import {validateTokenController} from '../controller/validateToken/validateTokenController';
+import {validateTokenSchema} from '../controller/validateToken/validateTokenSchema';
 
 const router = Router();
 
 router.post('/login', validateBody(loginClientSchema), loginClientController);
 router.post('/register', validateBody(registerClientSchema), registerClientController);
+router.post('/token', validateBody(validateTokenSchema), validateTokenController);
 
 export {
 	router,
